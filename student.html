@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>My JS Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      padding: 30px;
+    }
+
+    h1, h2 {
+      color: #1a7a6e;
+    }
+
+    button {
+      background-color: #1a7a6e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #145f55;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      width: 250px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: white;
+      border-left: 5px solid #1a7a6e;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #333;
+      min-height: 50px;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      display: none;
+      margin-bottom: 8px;
+    }
+
+    .field {
+      margin-bottom: 12px;
+    }
+
+    hr {
+      margin: 40px 0;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =============================================
+       SECTION 1: TEAM FORM
+  ============================================= -->
+
+  <h1>HACKATHON 2026</h1>
+  <h2>Team Form</h2>
+
+  <!-- Input 1: Team Name — already done for you -->
+  <div class="field">
+    <input type="text" id="teamName" placeholder="Team name" />
+    <p class="error" id="teamNameError">Please enter your team name.</p>
+  </div>
+
+  <!-- TODO 1: Add a div with class="field". Inside it, add a number input with id="teamMembers"
+       and placeholder="Number of members". Below the input, add a <p> with class="error"
+       and id="teamMembersError" that says: Please enter the number of members.
+       <div class="field">
+         <input type="number" id="teamMembers" placeholder="Number of members" />
+         <p class="error" id="teamMembersError">Please enter the number of members.</p>
+       </div>
+  -->
+
+
+  <!-- TODO 2: Add a div with class="field". Inside it, add a text input with id="favCourse"
+       and placeholder="Favorite course". Below the input, add a <p> with class="error"
+       and id="favCourseError" that says: Please enter your favorite course.
+       <div class="field">
+         <input type="text" id="favCourse" placeholder="Favorite course" />
+         <p class="error" id="favCourseError">Please enter your favorite course.</p>
+       </div>
+  -->
+
+
+  <button onclick="submitForm()">Submit</button>
+
+  <div class="output" id="formOutput">Your team info will appear here...</div>
+
+
+  <!-- =============================================
+       SECTION 2: CALCULATOR
+  ============================================= -->
+
+  <hr />
+
+  <h2>Calculator</h2>
+
+  <!-- Input 1: First number — already done for you -->
+  <div class="field">
+    <input type="number" id="num1" placeholder="First number" />
+    <p class="error" id="num1Error">Please enter the first number.</p>
+  </div>
+
+  <!-- TODO 3: Add a div with class="field". Inside it, add a number input with id="num2"
+       and placeholder="Second number". Below the input, add a <p> with class="error"
+       and id="num2Error" that says: Please enter the second number.
+  -->
+
+
+
+
+  <!-- + button is already done for you -->
+  <button onclick="calculate('+')">+</button>
+
+  <!-- TODO 4: Add two more buttons. The first should call calculate('-') and show the label -.
+       The second should call calculate('*') and show the label *.
+       <button onclick="calculate('-')">-</button>
+       <button onclick="calculate('*')">*</button>
+  -->
+
+
+
+
+  <div class="output" id="calcOutput">Your result will appear here...</div>
+
+
+  <!-- =============================================
+       JAVASCRIPT
+  ============================================= -->
+  <script>
+
+    // ── TEAM FORM ─────────────────────────────────
+
+    function submitForm() {
+
+      // TODO 5: Get the value from each input using document.getElementById('...').value.
+      // Replace each empty string below with the correct line of code.
+      // For members use the id "teamMembers", and for course use the id "favCourse".
+      // let name    = document.getElementById('teamName').value;   // example
+      let name    = '';
+      let members = '';
+      let course  = '';
+
+      // Name validation — already done for you
+      if (name === '') {
+        document.getElementById('teamNameError').style.display = 'block';
+        return;
+      } else {
+        document.getElementById('teamNameError').style.display = 'none';
+      }
+
+      // TODO 6: Check if members is empty. If it is, set the display of "teamMembersError" to "block" and return.
+      // If members is not empty, set the display of "teamMembersError" to "none".
+      // Copy the name validation above and replace name with members and teamNameError with teamMembersError.
+      
+
+
+      // TODO 7: Check if course is empty. If it is, set the display of "favCourseError" to "block" and return.
+      // If course is not empty, set the display of "favCourseError" to "none".
+      // Copy the same pattern again and replace the variable and id with course and favCourseError.
+      
+
+
+      document.getElementById('formOutput').textContent =
+        'Hello, we are team ' + name + '. Our team has ' + members +
+        ' members, and our favorite course is ' + course + '.';
+    }
+
+
+    // ── CALCULATOR ───────────────────────────────
+
+    // add function — already done for you
+    function add(a, b) {
+      let answer = a + b;
+      return answer;
+    }
+
+    // TODO 8: Write a function called subtract. It takes two parameters a and b.
+    // Inside, create a variable called answer, subtract b from a, and return answer.
+    // Use the add function above as your guide.
+    function subtract(a, b) {
+      
+    }
+
+
+    // TODO 9: Write a function called multiply. It takes two parameters a and b.
+    // Inside, create a variable called answer, multiply a by b, and return answer.
+    // Use the subtract function you just wrote as your guide.
+    function multiply(a, b) {
+      
+    }
+
+
+    function calculate(operator) {
+
+      // TODO 10: Get the value from each calculator input using document.getElementById('...').value.
+      // Replace the empty strings below. Use id "num1" for val1 and id "num2" for val2.
+      let val1 = '';
+      let val2 = '';
+
+      // num1 validation — already done for you
+      if (val1 === '') {
+        document.getElementById('num1Error').style.display = 'block';
+        return;
+      } else {
+        document.getElementById('num1Error').style.display = 'none';
+      }
+
+      // TODO 11: Check if val2 is empty. If it is, set the display of "num2Error" to "block" and return.
+      // If val2 is not empty, set the display of "num2Error" to "none".
+      // Copy the num1 validation above and replace val1 with val2 and num1Error with num2Error.
+      
+
+
+      let a = parseFloat(val1);
+      let b = parseFloat(val2);
+      let result;
+
+      if (operator === '+') {
+        // TODO 12: Call add(a, b) and store the return value in result.
+        // Then use document.getElementById('calcOutput').textContent to display:  result
+        // result = add(a, b);
+        // document.getElementById('calcOutput').textContent = + result; DONE
+        result = add(a, b);
+        document.getElementById('calcOutput').textContent = result;
+
+      } else if (operator === '-') {
+        // TODO 13: Call subtract(a, b) and store the return value in result.
+        // Then display in calcOutput:  result
+        
+
+
+      } else if (operator === '*') {
+        // TODO 14: Call multiply(a, b) and store the return value in result.
+        // Then display in calcOutput:  result
+        
+
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>
